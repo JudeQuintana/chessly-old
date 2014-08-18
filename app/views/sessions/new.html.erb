@@ -1,0 +1,35 @@
+<div class="container">
+
+  <section>
+    <article class="four-wide shift-four">
+      <div>
+        <h1>Welcome to Chessly!</h1>
+      </div>
+
+      <%= form_for @user, url: signin_path do |f| %>
+
+        <% if @user.errors.any? %>
+          <% @user.errors.full_messages.each do |err| %>
+            <div class="error-msg">
+              <p><%= err %></p>
+            </div>
+          <% end %>
+        <% end %>
+
+        <%= f.label :email %>
+        <%= f.email_field :email, autofocus: true %>
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+        <%= f.submit "Log In" %>
+
+      <% end %>
+
+      <div>
+        <p>Need an account? <%= link_to "Register", new_registration_path %></p>
+      </div>
+
+    </article>
+  </section>
+
+
+</div>
