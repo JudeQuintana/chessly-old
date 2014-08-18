@@ -1,0 +1,36 @@
+<div class="container">
+
+  <section>
+    <article class="four-wide shift-four">
+      <div>
+        <h1>Welcome to Chessly!</h1>
+      </div>
+
+      <%= form_for @user, url: registrations_path do |f| %>
+        <% if @user.errors.any? %>
+          <div class="error-msg">
+            <p>Your registration is incomplete!</p>
+          </div>
+        <% end %>
+
+        <%= f.label :email %>
+        <%= f.email_field :email %>
+        <%= f.label :username %>
+        <%= f.text_field :username %>
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+        <%= f.label :uscf, "USCF (optional)" %>
+        <%= f.number_field :uscf %>
+        <%= f.submit "Register" %>
+
+      <% end %>
+
+      <div>
+        <p>Already have an account? <%= link_to "Sign In", signin_path %></p>
+      </div>
+
+    </article>
+  </section>
+
+
+</div>
