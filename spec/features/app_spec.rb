@@ -63,7 +63,6 @@ def login(name)
 
   click_button 'Log In'
 
-  expect(page).to have_content("Home")
   expect(page).to have_content("Logout")
 
 end

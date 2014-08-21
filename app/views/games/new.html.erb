@@ -1,0 +1,20 @@
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4">
+
+      <%= form_tag(user_games_path(@user), method: :post) do %>
+        <div class="form-group">
+
+        <%= label_tag(:full_pgn, "Copy/Paste PGN") %>
+        <%= text_area_tag(:full_pgn, "", size: "24x20", class: "form-control") %>
+          </div>
+        <%= submit_tag("Submit", class: "btn btn-priamary") %>
+      <% end %>
+
+      <div class="col-lg-4"></div>
+    </div>
+  </div>
+
+</div>

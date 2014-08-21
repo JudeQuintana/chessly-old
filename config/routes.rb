@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   resources :registrations, only: [:new,:create]
 
   resources :users do
-    resources :games
+    resources :games do
+      resources :notes
+    end
   end
 
 
