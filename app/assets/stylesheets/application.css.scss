@@ -3,20 +3,8 @@
  *= require_self
  */
 
-.flash{
-
-
-}
-
-
-
-.notice{
-  color: green;
-  display: inline;
-}
-
-.alert{
-  width:90%
+.alert-login-reg-width{
+  width:80%
 }
 
 .error-msg{
@@ -27,17 +15,16 @@
 .field_with_errors{
 //  display: inline;
 }
+
 .field_with_errors input{
   border: 1px solid red;
   display: inline;
 
 }
 
-.form-control {
-  width: 90%;
-
+.login-reg-form-input-width{
+  width: 80%;
 }
-
 
 .login-form{
   margin-left: 35%;
@@ -51,4 +38,8 @@
 
 .login-reg-footer{
   padding-top: 3%;
+}
+
+.login-reg-top-pad-5{
+  padding-top: 5%;
 }

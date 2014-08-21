@@ -20,23 +20,6 @@
 
 <div class="container-fluid">
 
-  <div class="row">
-    <div class="col-lg-4"></div>
-    <div class="col-lg-4">
-
-      <% if flash[:notice] %>
-        <% flash.each do |name, msg| %>
-          <div class="alert alert-success" role="alert">
-            <%= msg %>
-          </div>
-        <% end %>
-      <% end %>
-
-    </div>
-    <div class="col-lg-4"></div>
-
-  </div>
-
   <%= yield %>
 </div>
 
