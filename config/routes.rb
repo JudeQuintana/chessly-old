@@ -10,12 +10,10 @@ Rails.application.routes.draw do
   get "signout" => "sessions#destroy", as: :signout
 
   resources :registrations, only: [:new,:create]
-  # resource :session, only: [:new,:create,:destroy]
 
-  resources :users
-  # do
-  #   resources :games
-  # end
+  resources :users do
+    resources :games
+  end
 
 
 end
