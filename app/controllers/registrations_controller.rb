@@ -13,7 +13,7 @@ class RegistrationsController < ApplicationController
                      uscf: params[:user][:uscf])
 
     if @user.save
-      redirect_to signin_path, notice: "Successfully Registered!"
+      redirect_to signin_path, notice: "Thanks for registering!"
     else
       render :new
     end

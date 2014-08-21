@@ -2,13 +2,44 @@
 <html>
 <head>
   <title>Chessly</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
 </head>
 <body>
 
-<%= yield %>
+<div class="container-fluid">
+  <section>
+    <article>
 
+    </article>
+  </section>
+  <section>
+    <article class="flash">
+      <% flash.each do |name, msg| %>
+        <div class="<%= name %> ">
+          <%= msg %>
+        </div>
+      <% end %>
+    </article>
+
+  </section>
+
+  <%= yield %>
+</div>
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </body>
+
 </html>

@@ -1,150 +1,54 @@
-@import 'bourbon';
-@import 'neat';
-@import 'base/base';
+/*
+ *= require_tree .
+ *= require_self
+ */
 
+.flash{
+  margin-left: 35%;
 
-// defining standard widths
-
-.container {
-  @include outer-container;
-}
-
-.one-wide {
-  @include span-columns(1);
-}
-
-.two-wide {
-  @include span-columns(2);
-}
-
-.three-wide {
-  @include span-columns(3);
-}
-
-.four-wide {
-  @include span-columns(4);
-}
-
-.five-wide {
-  @include span-columns(5);
-}
-
-.six-wide {
-  @include span-columns(6);
-}
-
-.seven-wide {
-  @include span-columns(7);
-}
-
-.eight-wide {
-  @include span-columns(8);
-}
-
-.nine-wide {
-  @include span-columns(9);
-}
-
-.ten-wide {
-  @include span-columns(10);
-}
-
-.eleven-wide {
-  @include span-columns(11);
-}
-
-// defining standard heights
-
-.quarter-height {
-  height: 25vw;
-}
-
-.one-third-height {
-  height: 33vw;
-}
-
-.half-height {
-  height: 50vw;
-}
-
-.two-third-height {
-  height: 66vw;
-}
-
-.three-quarter-height {
-  height: 75vw;
-}
-
-.full-height {
-  height: 100vw;
-}
-
-// defining shifts
-
-.shift-one {
-  @include shift(1);
-}
-
-.shift-two {
-  @include shift(2);
-}
-
-.shift-three {
-  @include shift(3);
-}
-
-.shift-four {
-  @include shift(4);
-}
-
-.shift-five {
-  @include shift(5);
-}
-
-.shift-six {
-  @include shift(6);
-}
-
-.shift-seven {
-  @include shift(7);
-}
-
-.shift-eight {
-  @include shift(8);
-}
-
-.shift-nine {
-  @include shift(9);
-}
-
-.shift-ten {
-  @include shift(10);
-}
-
-.shift-eleven {
-  @include shift(11);
-}
-
-.link-button {
-  @include button;
-  text-align: center;
-}
-
-.center-text {
-  text-align: center;
-}
-
-.field_with_errors {
-
-  input {
-    display: inline-block;
-    border: 2px solid red;
-  }
 
 }
 
-.error-msg {
-//  display: inline-block;
+
+.notice{
+  color: green;
+  display: inline;
+}
+
+.error-msg{
   color: red;
+  display: inline;
+}
 
+.field_with_errors{
+//  display: inline;
+}
+.field_with_errors input{
+  border: 1px solid red;
+  display: inline;
+
+}
+
+.form-control {
+  width: 40%;
+
+}
+
+.reg-form {
+  margin-left: 35%;
+  margin-top: 5%;
+}
+
+.login-form{
+  margin-left: 35%;
+  margin-top: 5%;
+}
+
+.login-reg-header{
+
+  padding-bottom: 1%;
+}
+
+.login-reg-footer{
+  padding-top: 1%;
 }
