@@ -1,10 +1,14 @@
 <div class="container-fluid">
-  <section>
-    <article class="reg-form">
+  <div class="row">
+    <div class="col-lg-4"></div>
+
+    <div class="col-lg-4">
       <div class="login-reg-header">
         <h1>Welcome to Chessly!</h1>
         <% if @user.errors.any? %>
-          <p class="error-msg">Your registration is incomplete!</p>
+          <div class="alert alert-danger" role="alert">
+            <p>Your registration is incomplete!</p>
+          </div>
         <% end %>
       </div>
 
@@ -42,10 +46,12 @@
       <% end %>
 
       <div class="login-reg-footer">
-        <p>Already have an account? <%= link_to "Sign In", signin_path, class: "btn btn-primary" %></p>
+        <p>Already have an account? <%= link_to "Sign In", signin_path %></p>
       </div>
 
-    </article>
-  </section>
+    </div>
+    <div class="col-lg-4"></div>
+
+  </div>
 
 </div>

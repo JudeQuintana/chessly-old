@@ -10,9 +10,15 @@
 }
 
 
+
 .notice{
   color: green;
   display: inline;
+}
+
+.alert{
+
+  width:40%
 }
 
 .error-msg{
@@ -30,14 +36,14 @@
 }
 
 .form-control {
-  width: 40%;
+  width: 90%;
 
 }
 
-.reg-form {
-  margin-left: 35%;
-  margin-top: 5%;
-}
+//.reg-form {
+//  margin-left: 35%;
+//  margin-top: 5%;
+//}
 
 .login-form{
   margin-left: 35%;

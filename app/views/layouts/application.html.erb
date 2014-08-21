@@ -19,18 +19,18 @@
 <body>
 
 <div class="container-fluid">
-  <section>
-    <article>
 
-    </article>
-  </section>
   <section>
     <article class="flash">
-      <% flash.each do |name, msg| %>
-        <div class="<%= name %> ">
-          <%= msg %>
-        </div>
+
+      <% if flash[:notice] %>
+        <% flash.each do |name, msg| %>
+          <div class="alert alert-success" role="alert">
+            <%= msg %>
+          </div>
+        <% end %>
       <% end %>
+
     </article>
 
   </section>
