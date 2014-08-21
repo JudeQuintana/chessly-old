@@ -20,8 +20,9 @@
 
 <div class="container-fluid">
 
-  <section>
-    <article class="flash">
+  <div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4">
 
       <% if flash[:notice] %>
         <% flash.each do |name, msg| %>
@@ -31,9 +32,10 @@
         <% end %>
       <% end %>
 
-    </article>
+    </div>
+    <div class="col-lg-4"></div>
 
-  </section>
+  </div>
 
   <%= yield %>
 </div>
