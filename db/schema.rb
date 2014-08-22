@@ -17,11 +17,13 @@ ActiveRecord::Schema.define(version: 20140821234404) do
   enable_extension "plpgsql"
 
   create_table "game_lists", force: true do |t|
-    t.string "title"
+    t.integer "user_id"
+    t.string  "title"
   end
 
   create_table "games", force: true do |t|
     t.integer  "user_id"
+    t.integer  "game_list_id"
     t.string   "event"
     t.string   "site"
     t.string   "round"

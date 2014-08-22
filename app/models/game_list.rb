@@ -1,6 +1,6 @@
 class GameList < ActiveRecord::Base
-  belongs_to :user
+  has_many :games, dependent: :destroy
 
-  validates :title, presence: true, :uniqueness => {message: "already exists!"}
+  validates :title, presence: true
 
 end

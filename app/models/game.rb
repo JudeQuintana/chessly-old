@@ -1,5 +1,5 @@
 class Game < ActiveRecord::Base
-  belongs_to :game_list
+  belongs_to :user
 
   validates :white, :black, :result, :pgn, presence: true
 
