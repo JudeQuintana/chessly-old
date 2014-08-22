@@ -3,16 +3,53 @@
   <div class="row">
 
     <div class="col-lg-2"></div>
+
     <div class="col-lg-8">
+        <% @user.game_lists.each do |game_list| %>
 
+          <h2 style="text-align: center"><%= game_list.title %></h2>
+          <% game_list.games.each_with_index do |game, index| %>
+          <table class="table-hover">
+            <tr>
+              <thead>
+              <th>#</th>
+              <th></th>
+              <th>White</th>
+              <th>Black</th>
+              <th>Result</th>
+              <!--<th>Or</th>-->
+              <!--<th>Del?</th>-->
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td><%= index+1 %></td>
+              <td><a href="/<%= game[:id] %>">Play</a></td>
 
-      <div id="board" style="padding-left:20%;width: 500px"></div>
-      <p>Status: <span id="status"></span></p>
+              <td><%= game[:white] %></td>
+              <td><%= game[:black] %></td>
+              <td><%= game[:result] %></td>
+              <!--<td><==></td>-->
+              <td>
+                <form action="/delete_game/<%= game[:id] %>" method="post">
+                  <input type="hidden" name="_method" value="delete">
+                  <button class="btn">Delete</button>
+                </form>
+              </td>
+            </tr>
+            </tbody>
+            </table>
+          <% end %>
 
-      <p>FEN: <span id="fen"></span></p>
+        <% end %>
 
-      <p>PGN: <span id="pgn"></span></p>
-    </div>
+        <!--<div id="board" style="padding-left:20%;width: 500px"></div>-->
+        <!--<p>Status: <span id="status"></span></p>-->
+
+        <!--<p>FEN: <span id="fen"></span></p>-->
+
+        <!--<p>PGN: <span id="pgn"></span></p>-->
+        </div>
 
   </div>
   <div class="col-lg-2"></div>
@@ -23,5 +60,5 @@
 
 
 <script>
-  buildChessboard();
+  //  buildChessboard();
 </script>

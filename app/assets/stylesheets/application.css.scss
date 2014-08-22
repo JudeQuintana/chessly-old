@@ -41,3 +41,20 @@
 .top-pad-2 {
   padding-top: 2%;
 }
+
+table {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  width: 100%;
+//  text-align: center;
+//  border-radius: 20px;
+
+  th {
+//    text-align: center;
+
+    font-size: 24px;
+  }
+
+  td{
+    font-size: 20px;
+  }
+}
