@@ -12,6 +12,9 @@
 ///
 //= require jquery
 //= require jquery_ujs
+//= require chessboardjs/chessboard-0.3.0
+//= require chessjs/chess
 //= require turbolinks
 //= require_tree .
+
 
