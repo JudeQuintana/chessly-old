@@ -1,31 +1,36 @@
 <div class="container-fluid">
 
   <div class="row">
-    <div class="col-lg-4"></div>
+    <div class="col-lg-3">
+    </div>
 
     <div class="col-lg-4">
-      <div>
-      <p style="font-size: 20px">[Event "<%= @game["event"] %>"]</p>
 
-      <p style="font-size: 20px">[Date "<%= @game["date"] %>"]</p>
-
-      <p style="font-size: 20px">[White "<%= @game["white"] %>"]</p>
-
-      <p style="font-size: 20px">[Black "<%= @game["black"] %>"]</p>
-
-      <p style="font-size: 20px">[Result "<%= @game["result"] %>"]</p>
-      </div>
 
       <div id="demo-container"></div>
+
+
+    </div>
+    <div class="col-lg-1"></div>
+
+    <div class="col-lg-3">
+
+      <div>
+        <p>[Event "<%= @game[:event] %>"]</p>
+
+        <p>[Date "<%= @game[:date] %>"]</p>
+
+        <p>[White "<%= @game[:white] %>"]</p>
+
+        <p>[Black "<%= @game[:black] %>"]</p>
+
+        <p>[Result "<%= @game[:result] %>"]</p>
+      </div>
+
       <div id="demo-moves"></div>
-
-
     </div>
 
-    <div class="col-lg-4">
 
-
-    </div>
   </div>
 </div>
 

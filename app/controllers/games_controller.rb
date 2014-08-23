@@ -30,7 +30,7 @@ class GamesController < ApplicationController
       return
     end
 
-    if game.nil? || game.empty?
+    if game.nil? || game == []
       @game = Game.new
       @game.errors[:pgn] = "text could not be parsed! Please check your formatting."
 

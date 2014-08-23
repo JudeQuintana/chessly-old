@@ -21,9 +21,6 @@
             <th>Black</th>
             <th>Result</th>
             <th></th>
-
-            <!--<th>Or</th>-->
-            <!--<th>Del?</th>-->
           </tr>
           </thead>
           <% game_list.games.each_with_index do |game, index| %>
@@ -32,13 +29,10 @@
             <tr>
               <td> </td>
               <td><%= index+1 %></td>
-              <!--<td><a href="/<%= game[:id] %>">Play</a></td>-->
               <td><%= link_to "Play", user_game_path(@user,game)%> </td>
-
               <td><%= game[:white] %></td>
               <td><%= game[:black] %></td>
               <td><%= game[:result] %></td>
-              <!--<td><==></td>-->
               <td>
                 <%= button_to "Delete", user_game_path(@user,game), method: :delete, class: "btn" %>
               </td>
