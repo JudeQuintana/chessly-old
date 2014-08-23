@@ -40,10 +40,7 @@
               <td><%= game[:result] %></td>
               <!--<td><==></td>-->
               <td>
-                <form action="/delete_game/<%= game[:id] %>" method="post">
-                  <input type="hidden" name="_method" value="delete">
-                  <button class="btn">Delete</button>
-                </form>
+                <%= button_to "Delete", user_game_path(@user,game), method: :delete, class: "btn" %>
               </td>
             </tr>
             </tbody>
