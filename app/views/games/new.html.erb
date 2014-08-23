@@ -1,5 +1,20 @@
 <div class="container-fluid">
   <div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4">
+      <% if @game.errors.any? %>
+        <div class="alert alert-danger" role="alert">
+          <% @game.errors.full_messages.each do |err|%>
+          <p><%=err%></p>
+          <% end %>
+        </div>
+
+    <% end %>
+      <div class="col-lg-4"></div>
+    </div>
+
+  </div>
+  <div class="row">
 
     <div class="col-lg-4"></div>
     <div class="col-lg-4">
@@ -7,9 +22,9 @@
       <%= form_tag(user_games_path(@user), method: :post, class: "form") do %>
         <div class="form-group">
 
-        <%= label_tag(:full_pgn, "Copy/Paste PGN") %>
-        <%= text_area_tag(:full_pgn, "", size: "24x20", class: "form-control") %>
-          </div>
+          <%= label_tag(:full_pgn, "Copy/Paste PGN") %>
+          <%= text_area_tag(:full_pgn, "", size: "24x20", class: "form-control") %>
+        </div>
         <%= submit_tag("Submit", class: "btn") %>
       <% end %>
 

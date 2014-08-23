@@ -9,10 +9,7 @@ class GamesController < ApplicationController
 
     pgn = params[:full_pgn]
 
-    if pgn == ""
-      flash[:notice] = "The PGN can not be blank!"
-      redirect '/create_game'
-    end
+    @user = User.find(session[:user_id])
 
     pgn.gsub!(/\u201c/, "\"")
     pgn.gsub!(/\u201d/, "\"")
@@ -26,8 +23,19 @@ class GamesController < ApplicationController
     begin
       game = PGN.parse(pgn).first
     rescue
-      flash[:notice] = "The PGN file could not be parsed! Comments cannot be parsed at this time. Please check your formatting."
-      redirect '/create_game'
+      @game = Game.new
+      @game.errors[:pgn] = "text could not be parsed! Please check your formatting."
+
+      render :new
+      return
+    end
+
+    if game == [] || game == nil
+      @game = Game.new
+      @game.errors[:pgn] = "text could not be parsed! Please check your formatting."
+
+      render :new
+      return
     end
 
     pgn.gsub!(/\]\s+1/, "]\n1")
@@ -37,9 +45,15 @@ class GamesController < ApplicationController
 
     @game = Game.new(user_id: session[:user_id], game_list_id: game_list_id, event: game.tags["Event"], site: game.tags["Site"], date: game.tags["Date"], round: game.tags["Round"], white: game.tags["White"], black: game.tags["Black"], result: game.tags["Result"], pgn: pgn)
 
-    @game.save
+    if @game.save
 
-    redirect_to '/'
+      redirect_to '/'
+
+    else
+
+      render :new
+
+    end
 
 
   end
