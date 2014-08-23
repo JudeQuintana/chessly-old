@@ -13,6 +13,7 @@ class RegistrationsController < ApplicationController
                      uscf: params[:user][:uscf])
 
     if @user.save
+      GameList.create!(user_id: @user.id, title: "My Games")
       redirect_to signin_path, notice: "Thanks for registering!"
     else
       render :new

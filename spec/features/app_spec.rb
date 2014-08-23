@@ -7,7 +7,7 @@ feature 'Auth' do
   end
 end
 
-feature 'Auth' do
+feature 'User can see list of games' do
   scenario 'user can see the sign in page' do
 
 

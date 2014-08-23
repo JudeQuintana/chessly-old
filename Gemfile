@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+ruby '2.1.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
 # Use postgresql as the database for Active Record
@@ -31,6 +31,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'pgn', :github => 'tobiasvl/pgn', :branch => 'pgn-annotations'
 
+#deploy to heroku
+gem 'rails_12factor', group: :production
 
 group :development, :test do
   gem "rspec-rails", "3.0.1"

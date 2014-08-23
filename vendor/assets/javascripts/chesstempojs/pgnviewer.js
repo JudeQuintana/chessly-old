@@ -1625,10 +1625,10 @@ var move_obj_id_counter=0;
 var activeBoard=null;
 var boardSounds=new CTSound({soundPath:"/sounds"});
 YAHOO.util.Event.onDOMReady(function(){
-  boardSounds.createSound("takesounds/78263__SuGu14__Metall01","takePiece1");
-  boardSounds.createSound("movesounds/77971__SuGu14__Fusta_0_05","movePiece3");
-  boardSounds.createSound("movesounds/10537__batchku__Hit_knuckle_15_004","movePiece7");
-  boardSounds.createSound("analysis/76426__spazzo_1493__Finished","finished");
+//  boardSounds.createSound("takesounds/78263__SuGu14__Metall01","takePiece1");
+//  boardSounds.createSound("movesounds/77971__SuGu14__Fusta_0_05","movePiece3");
+//  boardSounds.createSound("movesounds/10537__batchku__Hit_knuckle_15_004","movePiece7");
+//  boardSounds.createSound("analysis/76426__spazzo_1493__Finished","finished");
 });
 function isMouseOver(_1,e){
   var el=YAHOO.util.Dom.get(_1);
