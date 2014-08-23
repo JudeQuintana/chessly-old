@@ -14,6 +14,8 @@
 //= require jquery_ujs
 //= require chessboardjs/chessboard-0.3.0
 //= require chessjs/chess
+//= require chesstempojs/pgnyui
+//= require chesstempojs/pgnviewer
 //= require turbolinks
 //= require_tree .
 

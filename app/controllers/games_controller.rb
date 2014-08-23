@@ -33,12 +33,22 @@ class GamesController < ApplicationController
     pgn.gsub!(/\]\s+1/, "]\n1")
     pgn = pgn.scan(/^1\.\D.*$/).first
 
-    @game = Game.new(user_id: session[:user_id],game_list_id: 1, event: game.tags["Event"], site: game.tags["Site"], date: game.tags["Date"], round: game.tags["Round"], white: game.tags["White"], black: game.tags["Black"], result: game.tags["Result"], pgn: pgn)
+    @game = Game.new(user_id: session[:user_id], game_list_id: 1, event: game.tags["Event"], site: game.tags["Site"], date: game.tags["Date"], round: game.tags["Round"], white: game.tags["White"], black: game.tags["Black"], result: game.tags["Result"], pgn: pgn)
 
     @game.save
 
     redirect_to '/'
 
+
+  end
+
+
+  def show
+    @user = User.find(session[:user_id])
+
+
+    # p params
+    @game = Game.find(params[:id])
 
   end
 

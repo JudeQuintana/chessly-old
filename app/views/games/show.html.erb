@@ -1,0 +1,67 @@
+<div class="container-fluid">
+
+  <div class="row">
+    <div class="col-lg-4"></div>
+
+    <div class="col-lg-4">
+      <!--<div>-->
+      <!--<p style="font-size: 20px">[Event "<%= @game["event"] %>"]</p>-->
+
+      <!--<p style="font-size: 20px">[Date "<%= @game["date"] %>"]</p>-->
+
+      <!--<p style="font-size: 20px">[White "<%= @game["white"] %>"]</p>-->
+
+      <!--<p style="font-size: 20px">[Black "<%= @game["black"] %>"]</p>-->
+
+      <!--<p style="font-size: 20px">[Result "<%= @game["result"] %>"]</p>-->
+      <!--</div>-->
+
+      <div id="demo-container"></div>
+      <div id="demo-moves"></div>
+
+
+    </div>
+
+    <div class="col-lg-4">
+
+
+    </div>
+  </div>
+</div>
+
+
+<!--<script type="text/javascript" src="http://chesstempo.com/js/pgnyui.js"></script>-->
+<!--<script type="text/javascript"-->
+<!--src="http://chesstempo.com/js/pgnviewer.js">-->
+<!--</script>-->
+<!--<script type="text/javascript" src="/chess-tempo/pgnviewer.js"></script>-->
+<!--<link type="text/css" rel="stylesheet" href="http://chesstempo.com/css/board-min.css"/>-->
+
+<script>
+
+  $(document).ready(function () {
+
+    new PgnViewer(
+      { boardName: "demo",
+        pgnString: '<%= @game[:pgn] %>',
+        pieceSet: 'merida',
+        pieceSize: 65,
+        highlightFromTo: true,
+//        showCoordinates: true,
+        pauseBetweenMoves: 2000,
+        moveAnimationLength: .3
+//        movesFormat: "main_on_own_line"
+//        autoScrollMoves: true,
+        //showBracketsOnVariation: false,
+//        hideBracketsOnTopLevelVariation: true,
+//        canPasteFen: true,
+//        previewMode: true,
+//        soundEnabled: false
+//        puzzle: true
+//        showNPS: true
+//        newlineForEachMainMove: false
+      }
+    );
+
+  });
+</script>
