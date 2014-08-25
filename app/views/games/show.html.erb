@@ -2,13 +2,13 @@
 
   <div class="row">
     <!--<div class="col-lg-1"></div>-->
-    <div class="col-lg-3">
+    <div class="col-lg-4">
 
-      <%= form_for @note, url: user_game_note_path(@user,@game), class: "form" do |f| %>
+      <%= form_for @note, url: user_game_note_path(@user, @game), class: "form" do |f| %>
 
         <div class="form-group">
           <%= f.label(:note, "Notes") %>
-          <%= f.text_area(:note, size: "30x22", class: "form-control") %>
+          <%= f.text_area(:note, size: "30x25", class: "form-control") %>
         </div>
         <%= submit_tag("Save Note", class: "btn") %>
       <% end %>
@@ -19,7 +19,7 @@
     <div class="col-lg-5">
 
 
-      <div id="demo-container"  style="padding-left: 2.8%"></div>
+      <div id="demo-container" ></div>
 
 
     </div>
@@ -58,27 +58,16 @@
 
   $(document).ready(function () {
 
-    new PgnViewer(
-      { boardName: "demo",
-        pgnString: '<%= @game[:pgn] %>',
-        pieceSet: 'merida',
-        pieceSize: 65,
-        highlightFromTo: true,
-//        showCoordinates: true,
-        pauseBetweenMoves: 2000,
-        moveAnimationLength: .3
-//        movesFormat: "main_on_own_line"
-//        autoScrollMoves: true,
-        //showBracketsOnVariation: false,
-//        hideBracketsOnTopLevelVariation: true,
-//        canPasteFen: true,
-//        previewMode: true,
-//        soundEnabled: false
-//        puzzle: true
-//        showNPS: true
-//        newlineForEachMainMove: false
-      }
-    );
+    buildViewer('<%= @game[:pgn] %>');
+
+//    var resetBorder = setTimeout(function(){//fixing border on board
+//      var demoBorder = $("#demo-boardBorder");
+//      demoBorder.css('width', '539px');
+//      demoBorder.css('height', '544px');
+//    }, 0);
+
+//    $("#demo-flipper").on('click', resetBorder());
+
 
   });
 </script>
