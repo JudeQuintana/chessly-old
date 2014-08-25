@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :games do
-      resources :notes
+      resource :note
     end
   end
 

@@ -57,6 +57,11 @@ class GamesController < ApplicationController
   def show
     @user = User.find(session[:user_id])
     @game = Game.find(params[:id])
+    @note = @game.note
+    if @note.nil?
+      @note = Note.new
+    end
+
   end
 
   def destroy

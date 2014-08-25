@@ -1,7 +1,18 @@
 <div class="container-fluid">
 
   <div class="row">
-    <div class="col-lg-3">
+    <!--<div class="col-lg-1"></div>-->
+    <div class="col-lg-4">
+
+      <%= form_for @note, url: user_game_note_path(@user,@game), class: "form" do |f| %>
+
+        <div class="form-group">
+          <%= f.label(:note, "Notes") %>
+          <%= f.text_area(:note, size: "28x22", class: "form-control") %>
+        </div>
+        <%= submit_tag("Save Note", class: "btn") %>
+      <% end %>
+
     </div>
 
     <div class="col-lg-4">
