@@ -2,27 +2,28 @@
 
   <div class="row">
     <!--<div class="col-lg-1"></div>-->
-    <div class="col-lg-4">
+    <div class="col-lg-3">
 
       <%= form_for @note, url: user_game_note_path(@user,@game), class: "form" do |f| %>
 
         <div class="form-group">
           <%= f.label(:note, "Notes") %>
-          <%= f.text_area(:note, size: "28x22", class: "form-control") %>
+          <%= f.text_area(:note, size: "30x22", class: "form-control") %>
         </div>
         <%= submit_tag("Save Note", class: "btn") %>
       <% end %>
 
     </div>
 
-    <div class="col-lg-4">
+
+    <div class="col-lg-5">
 
 
-      <div id="demo-container"></div>
+      <div id="demo-container"  style="padding-left: 2.8%"></div>
 
 
     </div>
-    <div class="col-lg-1"></div>
+    <!--<div class="col-lg-1"></div>-->
 
     <div class="col-lg-3">
 
