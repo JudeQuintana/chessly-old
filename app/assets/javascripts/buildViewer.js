@@ -6,9 +6,10 @@ function buildViewer(pgn){
       pieceSet: 'merida',
       pieceSize: 65,
       highlightFromTo: true,
-//      showCoordinates: true,
+      showCoordinates: true,
       pauseBetweenMoves: 2000,
-      moveAnimationLength: .3
+      moveAnimationLength: .3,
+      disableFlipper:true
 //        movesFormat: "main_on_own_line"
 //        autoScrollMoves: true,
       //showBracketsOnVariation: false,

@@ -59,14 +59,19 @@
   $(document).ready(function () {
 
     buildViewer('<%= @game[:pgn] %>');
-
-//    var resetBorder = setTimeout(function(){//fixing border on board
-//      var demoBorder = $("#demo-boardBorder");
-//      demoBorder.css('width', '539px');
-//      demoBorder.css('height', '544px');
-//    }, 0);
-
-//    $("#demo-flipper").on('click', resetBorder());
+//
+    var resetBorder = setTimeout(function(e){//fixing border on board
+      var demoBorder = $("#demo-boardBorder");
+      demoBorder.css('width', '539px');
+      demoBorder.css('height', '544px');
+    }, 0);
+//
+//    $('#demo-container').on('click','#demo-flipper', function(){
+//      debugger;
+//
+//      resetBorder();
+//
+//    });
 
 
   });

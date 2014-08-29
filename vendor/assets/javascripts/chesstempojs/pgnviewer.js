@@ -6006,8 +6006,10 @@ Board.prototype.createBoardUI=function(){
   if(this.showCoordinates){
     _300=15;
   }
-  YAHOO.util.Dom.setStyle(_2ff,"width",(this.pieceSize*8+_300)+"px");
-  YAHOO.util.Dom.setStyle(_2ff,"height",(this.pieceSize*8+_300)+"px");
+  YAHOO.util.Dom.setStyle(_2ff,"width",(this.pieceSize*8+_300)+4+"px");
+//  YAHOO.util.Dom.setStyle(_2ff,"width",5+"px");
+  YAHOO.util.Dom.setStyle(_2ff,"height",(this.pieceSize*8+_300)+9+"px");
+//  YAHOO.util.Dom.setStyle(_2ff,"height",(this.pieceSize*8+(_300+9))+"px");
   var _301=document.createElement("div");
   YAHOO.util.Dom.setStyle(_301,"float","left");
   _301.id=this.boardName+"-rankLabels";
@@ -6957,8 +6959,8 @@ Board.prototype.changePieceSet=function(_3ac,_3ad){
   }
   _3b0.className="";
   YAHOO.util.Dom.addClass(_3b0,"ct-board-border"+this.squareColorClass);
-  YAHOO.util.Dom.setStyle(_3b0,"width",(this.pieceSize*8+_3b1)+"px");
-  YAHOO.util.Dom.setStyle(_3b0,"height",(this.pieceSize*8+_3b1)+"px");
+  YAHOO.util.Dom.setStyle(_3b0,"width",(this.pieceSize*8+_3b1)+4+"px");
+  YAHOO.util.Dom.setStyle(_3b0,"height",(this.pieceSize*8+_3b1)+9+"px");
   var _3b2=YAHOO.util.Dom.get("ctb-"+this.boardName);
   YAHOO.util.Dom.setStyle(_3b2,"width",(this.pieceSize*8)+"px");
   YAHOO.util.Dom.setStyle(_3b2,"height",(this.pieceSize*8)+"px");

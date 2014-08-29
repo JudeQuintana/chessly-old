@@ -88,4 +88,10 @@ function buildChessboard() {
 
   updateStatus();
 
+  $('#startBtn').on('click', function(e){
+    e.preventDefault();
+    board.start();
+
+  });
+
 }

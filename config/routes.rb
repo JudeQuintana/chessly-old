@@ -17,5 +17,7 @@ Rails.application.routes.draw do
     end
   end
 
+  get "/chesstest" => "chess#index"
+
 
 end
