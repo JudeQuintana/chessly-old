@@ -27,7 +27,7 @@
 
         <%= form_tag(user_game_fen_path(@user, @game), method: :get) do %>
           <%= label_tag(:fen, "FEN for Move #") %>
-          <%= number_field_tag(:fen) %>
+          <%= text_field_tag(:fen) %>
           <%= submit_tag("Find FEN", id: "fen-submit", class: "btn") %>
         <% end %>
 
@@ -99,29 +99,34 @@
 
     fen_submit.on('click', function (e) {
       e.preventDefault();
+      var fenResult =  $('.fen-result');
+
+      fenResult.empty();
+
+
 
       var fen_input = $('#fen');
 
       var move_num = fen_input.val();
 
-//      console.log(move_num)
-
-      $.each(fens.responseJSON, function (i, obj) {
-//        console.log(i);
-
-        if (move_num == +i) {
-
-          $('.fen-result').empty();
-
-          $('.fen-result').append("<p>" + i + ".   " + obj[0] + "</p>");
-          $('.fen-result').append("<p>" + i + "... " + obj[1] + "</p>");
-          console.log(obj[0]);
+//      console.log(fens.responseJSON[move_num][0]);
 
 
-        }
+      fenResult.append("<p>" + move_num + ".   " + fens.responseJSON[move_num][0] + "</p>");
+      fenResult.append("<p>" + move_num + "... " + fens.responseJSON[move_num][1] + "</p>");
 
-
-      });
+//      $.each(fens.responseJSON, function (i, obj) {
+////        console.log(i);
+//        if (move_num == +i) {
+//          $('.fen-result').empty();
+//          $('.fen-result').append("<p>" + i + ".   " + obj[0] + "</p>");
+//          $('.fen-result').append("<p>" + i + "... " + obj[1] + "</p>");
+////          console.log(obj[0]);
+//          return false; //break
+//        }
+//
+//
+//      });
 
 
     });

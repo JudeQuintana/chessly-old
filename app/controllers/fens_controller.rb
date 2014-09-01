@@ -25,7 +25,6 @@ class FensController < ApplicationController
 
     respond_to do |format|
 
-      format.html
       format.json { render json: @fen_hsh }
 
     end
