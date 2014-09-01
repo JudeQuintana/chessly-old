@@ -13,7 +13,8 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :games do
-      resource :note
+      resource :fen, only: [:show]
+      resource :note, only: [:create,:update]
     end
   end
 
