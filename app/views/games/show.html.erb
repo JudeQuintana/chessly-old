@@ -27,7 +27,7 @@
 
         <%= form_tag(user_game_fen_path(@user, @game), method: :get) do %>
           <%= label_tag(:fen, "FEN for Move #") %>
-          <%= text_field_tag(:fen) %>
+          <%= number_field_tag(:fen) %>
           <!--<%= submit_tag("Find FEN", id: "fen-submit", class: "btn") %>-->
         <% end %>
 
