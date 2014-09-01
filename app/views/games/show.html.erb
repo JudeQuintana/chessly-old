@@ -25,11 +25,8 @@
       <div class="form-group">
 
 
-        <%= form_tag(user_game_fen_path(@user, @game), method: :get) do %>
           <%= label_tag(:fen, "FEN for Move #") %>
           <%= number_field_tag(:fen) %>
-          <!--<%= submit_tag("Find FEN", id: "fen-submit", class: "btn") %>-->
-        <% end %>
 
       </div>
 
@@ -96,6 +93,9 @@
     var fen_submit = $('#fen-submit');
 //    console.log(fen_submit);
 
+    $('#fen').on('submit',function() {
+      return false;
+    });
 
 //    fen_submit.on('click', function (e) {
     $('#fen').on('input', function (e) {
