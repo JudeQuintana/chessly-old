@@ -28,7 +28,7 @@
         <%= form_tag(user_game_fen_path(@user, @game), method: :get) do %>
           <%= label_tag(:fen, "FEN for Move #") %>
           <%= text_field_tag(:fen) %>
-          <%= submit_tag("Find FEN", id: "fen-submit", class: "btn") %>
+          <!--<%= submit_tag("Find FEN", id: "fen-submit", class: "btn") %>-->
         <% end %>
 
       </div>
@@ -97,8 +97,9 @@
 //    console.log(fen_submit);
 
 
-    fen_submit.on('click', function (e) {
-      e.preventDefault();
+//    fen_submit.on('click', function (e) {
+    $('#fen').on('input', function (e) {
+//      e.preventDefault();
       var fenResult =  $('.fen-result');
 
       fenResult.empty();
