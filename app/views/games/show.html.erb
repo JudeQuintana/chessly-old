@@ -25,8 +25,8 @@
       <div class="form-group">
 
 
-          <%= label_tag(:fen, "FEN for Move #") %>
-          <%= number_field_tag(:fen) %>
+        <%= label_tag(:fen, "FEN for Move #") %>
+        <%= number_field_tag(:fen) %>
 
       </div>
 
@@ -76,6 +76,7 @@
       demoBorder.css('width', '539px');
       demoBorder.css('height', '544px');
     }, 0);
+    
 //
 //    $('#demo-container').on('click','#demo-flipper', function(){
 //      debugger;
@@ -89,45 +90,19 @@
 
 //    console.log(fens)
 
+    var fen_input = $('#fen');
 
-    var fen_submit = $('#fen-submit');
-//    console.log(fen_submit);
 
-    $('#fen').on('submit',function() {
-      return false;
-    });
-
-//    fen_submit.on('click', function (e) {
-    $('#fen').on('input', function (e) {
-//      e.preventDefault();
-      var fenResult =  $('.fen-result');
+    fen_input.on('input', function (e) {
+      var fenResult = $('.fen-result');
 
       fenResult.empty();
 
 
-
-      var fen_input = $('#fen');
-
       var move_num = fen_input.val();
-
-//      console.log(fens.responseJSON[move_num][0]);
-
 
       fenResult.append("<p>" + move_num + ".   " + fens.responseJSON[move_num][0] + "</p>");
       fenResult.append("<p>" + move_num + "... " + fens.responseJSON[move_num][1] + "</p>");
-
-//      $.each(fens.responseJSON, function (i, obj) {
-////        console.log(i);
-//        if (move_num == +i) {
-//          $('.fen-result').empty();
-//          $('.fen-result').append("<p>" + i + ".   " + obj[0] + "</p>");
-//          $('.fen-result').append("<p>" + i + "... " + obj[1] + "</p>");
-////          console.log(obj[0]);
-//          return false; //break
-//        }
-//
-//
-//      });
 
 
     });
