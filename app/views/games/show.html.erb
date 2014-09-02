@@ -4,13 +4,13 @@
     <!--<div class="col-lg-1"></div>-->
     <div class="col-lg-4">
 
-      <%= form_for @note, url: user_game_note_path(@user, @game), class: "form" do |f| %>
+      <%= form_for @game, url: user_game_note_path(@user, @game), class: "form" do |f| %>
 
         <div class="form-group">
-          <%= f.label(:note, "Notes") %>
-          <%= f.text_area(:note, size: "30x25", class: "form-control") %>
+          <%= f.label(:notes, "Notes") %>
+          <%= f.text_area(:notes, size: "30x25", class: "form-control") %>
         </div>
-        <%= submit_tag("Save Note", class: "btn") %>
+        <%= f.submit("Save Note", id: "save-note-btn", class: "btn") %>
       <% end %>
 
     </div>
@@ -20,8 +20,6 @@
 
 
       <div id="demo-container"></div>
-
-
 
 
     </div>
@@ -90,6 +88,7 @@
 
     var fens = $.getJSON("<%= user_game_fen_path(@user,@game) %>");
 
+
 //    console.log(fens)
 
     var fen_input = $('#fen');
@@ -109,6 +108,23 @@
 
     });
 
+
+    $('#save-note-btn').on('click', function(e){
+      e.preventDefault();
+      var note = $('textarea').val();
+
+      $.ajax(
+        {
+         url: "<%= user_game_note_path(@user,@game) %>",
+         type: "put",
+         data: {"notes": note}
+        })
+        .success(function(){
+          $('textarea').val(note);
+        });
+
+
+    });
 
   });
 </script>
