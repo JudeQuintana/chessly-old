@@ -2,7 +2,7 @@
  *= require_tree .
  * require chessboardjs/chessboard-0.3.0
  *= require chesstempojs/board-min
- *= require jquery-ui
+ *= require jquery-ui/core
  *= require_self
  */
 
@@ -14,9 +14,10 @@
   background-attachment: fixed;
 }
 
-#create-pgn{
+.hid{
   display: none;
 }
+
 
 .alert-login-reg-width {
   width: 80%

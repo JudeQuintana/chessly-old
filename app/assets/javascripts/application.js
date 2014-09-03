@@ -12,7 +12,7 @@
 ///
 //= require jquery
 //= require jquery_ujs
-//= require jquery-ui
+//= require jquery-ui/effect-clip
 // require chessboardjs/chessboard-0.3.0
 // require chessjs/chess
 //= require chesstempojs/pgnyui
