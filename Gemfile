@@ -31,6 +31,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'pgn', :github => 'tobiasvl/pgn', :branch => 'pgn-annotations'
 
+gem 'jquery-ui-rails'
+
 #deploy to heroku
 gem 'rails_12factor', group: :production
 

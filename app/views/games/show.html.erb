@@ -10,7 +10,7 @@
           <%= f.label(:notes, "Notes") %>
           <%= f.text_area(:notes, size: "30x25", class: "form-control") %>
         </div>
-          <%= f.submit("Save Note", id: "save-note-btn", class: "btn") %> <p class="save-flash">Saved!</p>
+        <%= f.submit("Save Note", id: "save-note-btn", class: "btn") %> <p class="save-flash">Saved!</p>
       <% end %>
 
     </div>
@@ -20,14 +20,6 @@
 
 
       <div id="demo-container"></div>
-      <div>
-
-        <%= label_tag(:fen, "FEN for Move #") %>
-        <%= number_field_tag(:fen) %>
-
-      </div>
-
-      <div class="fen-result"></div>
 
 
     </div>
@@ -51,7 +43,25 @@
 
 
 
+      </div>
+
+    <div class="row">
+      <div class="col-lg-4"></div>
+      <div class="col-lg-5">
+        <div>
+
+          <%= label_tag(:fen, "FEN for Move #") %>
+          <%= number_field_tag(:fen) %>
+
+        </div>
+
+        <div class="fen-result"></div>
+
+      </div>
+      <div class="col-lg-3"></div>
     </div>
+
+
 
 
   </div>
@@ -121,11 +131,13 @@
         })
         .success(function () {
           $('textarea').val(note);
-          $('.save-flash').css('display','inline').delay(2500).fadeOut(400);
+          $('.save-flash').css('display', 'inline').delay(2500).fadeOut(400);
         });
 
 
     });
+
+
 
   });
 </script>
