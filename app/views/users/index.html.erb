@@ -9,7 +9,11 @@
 
         <div class="panel panel-default hid">
           <!-- Default panel contents -->
-          <div class="panel-heading"><h3><%= game_list.title %></h3></div>
+          <div class="panel-heading"><h3><%= game_list.title %></h3>
+            <div class="filter">
+            <input type="text" id="search-input" class="form-control" placeholder="Filter"/>
+            </div>
+          </div>
           <table class="table table-hover">
 
             <tr>
@@ -23,9 +27,10 @@
               <th></th>
             </tr>
             </thead>
+            <tbody>
+
             <% game_list.games.each_with_index do |game, index| %>
 
-              <tbody>
               <tr>
                 <td></td>
                 <td><%= index+1 %></td>
@@ -39,12 +44,13 @@
                 <td><%= game[:result] %></td>
                 <td>
                   <%= button_to user_game_path(@user, game), method: :delete, class: "btn" do %>
-                    <%= content_tag(:span,"",class: "glyphicon glyphicon-remove") %>
-                  <%end%>
+                    <%= content_tag(:span, "", class: "glyphicon glyphicon-remove") %>
+                  <% end %>
                 </td>
               </tr>
-              </tbody>
             <% end %>
+            </tbody>
+
           </table>
 
         </div>
@@ -68,7 +74,7 @@
 
 
 <script>
-  //  buildChessboard();
+//    buildChessboard();
 
 
   $(document).ready(function () {
@@ -79,7 +85,45 @@
 
     }, 100);
 
-    var playLinks = $('td').find('a');
+
+    $('#search-input').on('keyup', function () {
+
+      var data = $(this).val().split(" ");
+
+      var $games = $('tbody').find('tr');
+
+//      console.log($(this).val());
+
+
+      if ($(this).val() == "") {
+        $games.show();
+        return;
+      }
+
+      //hide all rows
+      $games.hide();
+
+      $games.filter(function (i, v) {
+        var $t = $(this);
+        for (var d = 0; d < data.length; ++d) {
+          if (data[d] == ""){
+            break;
+          }
+          if ($t.is(":contains('" + data[d] + "')")) {
+//            console.log($t);
+
+            return true;
+          }
+        }
+        return false;
+      })
+        //show the rows that match.
+        .show();
+
+    });
+
+
+//    var playLinks = $('td').find('a');
 
 //    playLinks.on('click', function(e){
 //      e.preventDefault();
