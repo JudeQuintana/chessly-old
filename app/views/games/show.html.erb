@@ -10,7 +10,9 @@
             <%= f.label(:notes, "Notes") %>
             <%= f.text_area(:notes, size: "30x25", class: "form-control") %>
           </div>
-          <%= f.submit("Save Note", id: "save-note-btn", class: "btn") %> <p class="save-flash">Saved!</p>
+          <%= f.button(id: "save-note-btn", class: "btn") do %> <p class="save-flash">Saved!</p>
+            <%= content_tag(:span, "", class: "glyphicon glyphicon-floppy-disk") %>
+          <% end %>
         <% end %>
 
       </div>
@@ -44,7 +46,7 @@
 
       </div>
 
-      <div class="row">
+      <div class="row" style="margin:auto;">
         <div class="col-lg-4"></div>
         <div class="col-lg-5">
           <div>
@@ -115,8 +117,10 @@
 
       var move_num = fen_input.val();
 
-      fenResult.append("<p>" + move_num + ".   " + fens.responseJSON[move_num][0] + "</p>");
-      fenResult.append("<p>" + move_num + "... " + fens.responseJSON[move_num][1] + "</p>");
+      fenResult.append(
+          "<p>" + move_num + ".   " + fens.responseJSON[move_num][0] + "</p>" +
+          "<p>" + move_num + "... " + fens.responseJSON[move_num][1] + "</p>"
+      );
 
 
     });
