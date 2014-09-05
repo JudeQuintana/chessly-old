@@ -64,6 +64,9 @@
 
 .panel {
   display: none;
+
+  max-height: 695px;
+  overflow: scroll;
   h3 {
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 

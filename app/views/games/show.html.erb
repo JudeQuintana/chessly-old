@@ -74,6 +74,9 @@
 <!--</script>-->
 <!--<script type="text/javascript" src="/chess-tempo/pgnviewer.js"></script>-->
 <!--<link type="text/css" rel="stylesheet" href="http://chesstempo.com/css/board-min.css"/>-->
+<script id="game-data">
+  var gameData = "<%=@game[:pgn]%>";
+</script>
 
 <script>
 
@@ -85,7 +88,7 @@
 
     }, 500);
 
-    buildViewer('<%= @game[:pgn] %>');
+    buildViewer(gameData);
 //
     var resetBorder = setTimeout(function (e) {//fixing border on board
       var demoBorder = $("#demo-boardBorder");
