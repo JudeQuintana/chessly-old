@@ -16,13 +16,17 @@
   </div>
   <div class="row">
 
-    <div class="col-lg-4"></div>
+    <div class="col-lg-4">
+
+
+
+    </div>
     <div class="col-lg-4">
 
       <%= form_tag(user_games_path(@user), method: :post, class: "form hid") do %>
         <div class="form-group">
 
-          <%= label_tag(:full_pgn, "Copy/Paste PGN") %>
+          <%= label_tag(:full_pgn, "Copy/Paste PGN") %> <%= link_to "Example", "http://www.chessgames.com/perl/nph-chesspgn?text=1&gid=1139363",target:"_blank"%>
           <%= text_area_tag(:full_pgn, "", size: "24x20", class: "form-control") %>
         </div>
         <%= submit_tag("Submit", class: "btn") %>
