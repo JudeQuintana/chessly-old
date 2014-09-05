@@ -28,7 +28,7 @@
             </tr>
             </thead>
             <tbody>
-
+            <% if game_list.games.length > 0 %>
             <% game_list.games.each_with_index do |game, index| %>
 
               <tr>
@@ -49,6 +49,12 @@
                 </td>
               </tr>
             <% end %>
+              <%else%>
+
+                <h3 style = "text-align: center">No games, try creating one!</h3>
+
+
+              <%end%>
             </tbody>
 
           </table>
